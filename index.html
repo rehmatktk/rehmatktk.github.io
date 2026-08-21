@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rehmat Zaman Khattak — E-Commerce Manager & AI-Powered Digital Marketing Strategist</title>
+<meta name="description" content="Rehmat Zaman Khattak — E-Commerce Manager, AI-Powered Digital Marketing Strategist, Purchasing & Operations. 16+ years across Amazon EU & MENA, Shopify, Noon, Alibaba.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060a13;
+  --bg2:#0a1020;
+  --ink:#eef2fa;
+  --muted:#8b96ad;
+  --cyan:#22d3ee;
+  --violet:#8b5cf6;
+  --blue:#3b82f6;
+  --amber:#fbbf24;
+  --card:rgba(20,28,48,.55);
+  --line:rgba(34,211,238,.18);
+  --glow:0 0 40px rgba(34,211,238,.15);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;overflow-x:hidden}
+::selection{background:var(--cyan);color:#060a13}
+canvas#net{position:fixed;inset:0;z-index:0;pointer-events:none}
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aurora i{position:absolute;border-radius:50%;filter:blur(110px);opacity:.32;animation:drift 18s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:55vmax;height:55vmax;background:#0e3a5c;top:-20%;left:-15%}
+.aurora i:nth-child(2){width:45vmax;height:45vmax;background:#2a1e5c;bottom:-25%;right:-10%;animation-delay:-6s}
+.aurora i:nth-child(3){width:30vmax;height:30vmax;background:#093a3f;top:40%;left:55%;animation-delay:-12s}
+@keyframes drift{to{transform:translate(6vmax,-5vmax) scale(1.15)}}
+main{position:relative;z-index:2}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 5vw;backdrop-filter:blur(16px);background:rgba(6,10,19,.6);border-bottom:1px solid rgba(34,211,238,.1)}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:.05em}
+.logo b{background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;gap:1.9rem;list-style:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;transition:.3s}
+nav a:hover{color:var(--cyan)}
+@media(max-width:860px){nav ul{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  padding:7rem 6vw 4rem;perspective:1200px;position:relative}
+.hero-inner{transform-style:preserve-3d;will-change:transform;max-width:1000px}
+.badge{display:inline-flex;align-items:center;gap:.55rem;border:1px solid var(--line);border-radius:100px;
+  padding:.5rem 1.2rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);
+  background:rgba(34,211,238,.06);margin-bottom:1.8rem;transform:translateZ(50px)}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 12px #34d399;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.4}}
+h1{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(2.6rem,7.5vw,5.4rem);line-height:1.05;transform:translateZ(80px)}
+h1 span{background:linear-gradient(92deg,var(--cyan) 10%,var(--blue) 45%,var(--violet) 90%);background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s linear infinite}
+@keyframes sheen{to{background-position:200% center}}
+.roles{margin-top:1.4rem;color:var(--muted);font-size:clamp(.95rem,2.2vw,1.2rem);transform:translateZ(55px)}
+.roles b{color:var(--ink);font-weight:500}
+.hero-meta{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center;margin-top:1.6rem;color:var(--muted);font-size:.85rem;transform:translateZ(40px)}
+.hero-meta span{display:inline-flex;align-items:center;gap:.45rem}
+.hero-meta i{color:var(--cyan);font-style:normal}
+.hero-cta{margin-top:2.6rem;display:flex;gap:1.1rem;justify-content:center;flex-wrap:wrap;transform:translateZ(60px)}
+.btn{padding:.95rem 2.3rem;border-radius:10px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;font-weight:600;transition:.3s;position:relative}
+.btn.primary{background:linear-gradient(92deg,var(--cyan),var(--blue));color:#04121a;box-shadow:0 8px 30px rgba(34,211,238,.35)}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(34,211,238,.5)}
+.btn.ghost{border:1px solid var(--line);color:var(--cyan)}
+.btn.ghost:hover{background:rgba(34,211,238,.08);transform:translateY(-3px)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:4rem;width:100%;max-width:1000px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.6rem 1rem;backdrop-filter:blur(10px);
+  transition:transform .3s,border-color .3s;transform-style:preserve-3d}
+.stat:hover{transform:translateY(-6px);border-color:var(--cyan);box-shadow:var(--glow)}
+.stat b{font-family:'Sora',sans-serif;font-size:2.4rem;font-weight:800;display:block;
+  background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.scroll-hint{position:absolute;bottom:1.6rem;color:var(--muted);font-size:.66rem;letter-spacing:.4em;text-transform:uppercase;animation:bob 2.4s infinite}
+@keyframes bob{50%{transform:translateY(7px)}}
+
+/* ---------- SECTIONS ---------- */
+section{padding:6.5rem 6vw;max-width:1200px;margin:0 auto;position:relative}
+.sec-label{display:flex;align-items:center;gap:1.1rem;margin-bottom:1.2rem}
+.sec-label span{letter-spacing:.4em;text-transform:uppercase;font-size:.7rem;color:var(--cyan)}
+.sec-label::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+h2{font-family:'Sora',sans-serif;font-size:clamp(1.8rem,4.5vw,2.9rem);font-weight:700;margin-bottom:2.4rem}
+h2 em{font-style:normal;background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.reveal{opacity:0;transform:translateY(46px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---------- ABOUT ---------- */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:start}
+.about-grid p{color:var(--muted);font-weight:300;margin-bottom:1.1rem;font-size:1rem}
+.about-grid strong{color:var(--ink);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.chip{border:1px solid var(--line);border-radius:100px;padding:.45rem 1.05rem;font-size:.76rem;color:#b9c3d8;
+  background:rgba(34,211,238,.04);transition:.3s;cursor:default}
+.chip:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.impact{background:linear-gradient(140deg,rgba(34,211,238,.08),rgba(139,92,246,.08));border:1px solid var(--line);
+  border-radius:18px;padding:2rem;backdrop-filter:blur(8px)}
+.impact h3{font-family:'Sora',sans-serif;font-size:1rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.2rem}
+.impact li{list-style:none;display:flex;gap:.8rem;color:var(--muted);font-size:.92rem;margin-bottom:.9rem;align-items:baseline}
+.impact li b{color:var(--ink);font-weight:600;white-space:nowrap}
+.impact li::before{content:"▸";color:var(--cyan)}
+@media(max-width:880px){.about-grid{grid-template-columns:1fr}}
+
+/* ---------- AI STACK ---------- */
+.ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem}
+.ai-card{background:var(--card);border:1px solid rgba(139,92,246,.16);border-radius:18px;padding:1.8rem;
+  backdrop-filter:blur(10px);transform-style:preserve-3d;transition:transform .2s ease-out,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
+.ai-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--violet));opacity:0;transition:.3s}
+.ai-card:hover{border-color:var(--violet);box-shadow:0 0 40px rgba(139,92,246,.18)}
+.ai-card:hover::before{opacity:1}
+.ai-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.9rem;transform:translateZ(30px)}
+.ai-head h4{font-family:'Sora',sans-serif;font-size:1.02rem}
+.lvl{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;padding:.3rem .7rem;border-radius:100px;font-weight:600}
+.lvl.exp{background:rgba(34,211,238,.14);color:var(--cyan)}
+.lvl.adv{background:rgba(139,92,246,.16);color:#b79dfb}
+.lvl.pro{background:rgba(251,191,36,.13);color:var(--amber)}
+.ai-card p{color:var(--muted);font-size:.86rem;font-weight:300;transform:translateZ(20px)}
+
+/* ---------- EXPERIENCE ---------- */
+.timeline{position:relative;padding-left:2.5rem}
+.timeline::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--cyan),var(--violet),transparent)}
+.t-item{position:relative;margin-bottom:2.6rem;background:var(--card);border:1px solid rgba(34,211,238,.1);
+  border-radius:16px;padding:1.8rem 2rem;backdrop-filter:blur(8px);transition:border-color .3s,transform .3s}
+.t-item:hover{border-color:var(--cyan);transform:translateX(6px)}
+.t-item::before{content:"";position:absolute;left:-2.5rem;top:2rem;width:13px;height:13px;border-radius:50%;
+  background:var(--bg);border:3px solid var(--cyan);transform:translateX(-6px);box-shadow:0 0 16px rgba(34,211,238,.6)}
+.t-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;align-items:baseline}
+.t-item h3{font-family:'Sora',sans-serif;font-size:1.22rem;font-weight:700}
+.when{font-size:.72rem;letter-spacing:.2em;color:var(--cyan);text-transform:uppercase;white-space:nowrap}
+.where{color:#9db4e8;font-size:.88rem;margin:.25rem 0 .8rem;font-weight:500}
+.t-item ul{list-style:none}
+.t-item li{color:var(--muted);font-weight:300;font-size:.92rem;margin-bottom:.55rem;padding-left:1.1rem;position:relative}
+.t-item li::before{content:"▸";position:absolute;left:0;color:var(--violet)}
+.t-item li b{color:var(--ink);font-weight:600}
+
+/* ---------- SKILLS ---------- */
+.skills-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem}
+.skill-box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.8rem;backdrop-filter:blur(10px);
+  transform-style:preserve-3d;transition:transform .2s ease-out,border-color .3s}
+.skill-box:hover{border-color:var(--cyan)}
+.skill-box h4{font-family:'Sora',sans-serif;font-size:1rem;margin-bottom:1.1rem;transform:translateZ(25px)}
+.skill{margin-bottom:1rem}
+.skill .row{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted);margin-bottom:.4rem}
+.bar{height:5px;border-radius:5px;background:rgba(255,255,255,.07);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:5px;background:linear-gradient(90deg,var(--cyan),var(--violet));transition:width 1.5s cubic-bezier(.2,.7,.2,1)}
+
+/* ---------- EDUCATION / CERTS ---------- */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.cert{background:var(--card);border:1px solid rgba(251,191,36,.14);border-radius:14px;padding:1.3rem 1.5rem;
+  display:flex;gap:1rem;align-items:flex-start;transition:.3s}
+.cert:hover{border-color:var(--amber);transform:translateY(-4px)}
+.cert .ico{font-size:1.3rem;line-height:1}
+.cert b{display:block;font-size:.92rem;font-weight:600}
+.cert span{color:var(--muted);font-size:.78rem}
+
+/* ---------- LANGUAGES ---------- */
+.langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.lang{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.5rem;text-align:center;transition:.3s}
+.lang:hover{border-color:var(--cyan);transform:translateY(-5px);box-shadow:var(--glow)}
+.lang b{font-family:'Sora',sans-serif;font-size:1.15rem;display:block;margin-bottom:.3rem}
+.lang span{color:var(--cyan);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase}
+.lang p{color:var(--muted);font-size:.8rem;margin-top:.3rem}
+
+/* ---------- CONTACT ---------- */
+.contact{text-align:center;padding-bottom:8rem}
+.contact p{color:var(--muted);max-width:560px;margin:0 auto 2.4rem;font-weight:300}
+.contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.c-link{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--line);border-radius:12px;
+  padding:1rem 1.7rem;color:var(--ink);text-decoration:none;font-size:.9rem;background:var(--card);transition:.3s}
+.c-link:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:var(--glow)}
+.c-link i{font-style:normal;color:var(--cyan)}
+footer{text-align:center;padding:2.2rem 6vw;color:var(--muted);font-size:.72rem;border-top:1px solid rgba(34,211,238,.08);position:relative;z-index:2}
+footer .gdpr{max-width:720px;margin:0 auto .8rem;font-style:italic;opacity:.75}
+
+/* marquee */
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:1.1rem 0;white-space:nowrap;background:rgba(10,16,32,.5)}
+.marquee div{display:inline-block;animation:slide 26s linear infinite;font-size:.95rem;color:var(--muted);font-weight:300}
+.marquee b{color:var(--cyan);font-weight:400;margin:0 1.4rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+</style>
+</head>
+<body>
+<div class="aurora"><i></i><i></i><i></i></div>
+<canvas id="net"></canvas>
+
+<nav>
+  <div class="logo">REHMAT<b>.</b>ZK</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#ai">AI Stack</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+<header class="hero" id="top">
+  <div class="hero-inner" id="heroTilt">
+    <div class="badge">Relocating to Europe · Open to employer sponsorship · Available immediately</div>
+    <h1>Rehmat Zaman<br><span>Khattak</span></h1>
+    <p class="roles"><b>E-Commerce Manager</b> · <b>AI-Powered Digital Marketing Strategist</b> · <b>Purchasing & Operations</b></p>
+    <div class="hero-meta">
+      <span><i>📍</i> Dubai, UAE</span>
+      <span><i>✉</i> rehmatzaman@gmail.com</span>
+      <span><i>📞</i> +971 55 692 1707</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn primary" href="#experience">View Experience</a>
+      <a class="btn ghost" href="mailto:rehmatzaman@gmail.com">Hire Me</a>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat reveal"><b data-count="45" data-suf="%">0</b><span>YoY revenue growth (Amazon & Noon)</span></div>
+    <div class="stat reveal"><b data-count="22" data-suf="%">0</b><span>Customer acquisition cost reduction</span></div>
+    <div class="stat reveal"><b data-count="18" data-suf="%">0</b><span>Conversion uplift via A+ Content</span></div>
+    <div class="stat reveal"><b data-count="60" data-suf="%">0</b><span>Content production time cut with AI</span></div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<div class="marquee"><div>
+  Amazon Seller & Vendor Central <b>◆</b> PPC & Bid Optimization <b>◆</b> SEO / SEM Strategy <b>◆</b> FBA/FBM Operations <b>◆</b> Generative AI Integration <b>◆</b> Vendor Negotiation <b>◆</b> Demand Forecasting <b>◆</b> ERP & Inventory Control <b>◆</b> Data Analytics <b>◆</b>
+  Amazon Seller & Vendor Central <b>◆</b> PPC & Bid Optimization <b>◆</b> SEO / SEM Strategy <b>◆</b> FBA/FBM Operations <b>◆</b> Generative AI Integration <b>◆</b> Vendor Negotiation <b>◆</b> Demand Forecasting <b>◆</b> ERP & Inventory Control <b>◆</b> Data Analytics <b>◆</b>
+</div></div>
+
+<section id="about">
+  <div class="sec-label reveal"><span>01 — Profile</span></div>
+  <h2 class="reveal">Driving growth where <em>commerce meets AI</em></h2>
+  <div class="about-grid">
+    <div class="reveal">
+      <p>Results-driven E-Commerce Manager with <strong>16+ years of international experience</strong> across Amazon 1P/3P (EU & MENA), Shopify, Noon, and Alibaba — delivering consistent revenue growth across B2B and B2C channels.</p>
+      <p>Expert in <strong>PPC optimisation, A+ Content, SEO/SEM, vendor negotiation, product photography</strong> and full-funnel marketplace operations. Multilingual communicator with <strong>direct EU market experience</strong>, having built and managed B2B sales and digital operations in Athens, Greece.</p>
+      <p>Actively integrating <strong>Generative AI</strong> (Claude, ChatGPT, Gemini, Midjourney) to cut content production time by 60% and design costs by 40%. Familiar with Amazon EU marketplace structure (DE, UK, FR, IT) and GCC-wide digital campaign management.</p>
+      <div class="chips">
+        <span class="chip">Amazon Seller & Vendor Central</span><span class="chip">PPC & Bid Optimization</span>
+        <span class="chip">SEO / SEM Strategy</span><span class="chip">FBA/FBM & Marketplace Ops</span>
+        <span class="chip">Generative AI Integration</span><span class="chip">Product Photography & Visual Design</span>
+        <span class="chip">Vendor Negotiation</span><span class="chip">Brand Identity Design</span>
+        <span class="chip">Demand Forecasting</span><span class="chip">ERP & Inventory Control</span>
+        <span class="chip">Multi-Channel Strategy</span><span class="chip">Data Analytics</span>
+      </div>
+    </div>
+    <div class="impact tilt reveal">
+      <h3>⚡ AI Impact</h3>
+      <ul>
+        <li><b>↓ 60%</b> content production time across listings & campaigns</li>
+        <li><b>↓ 40%</b> design outsourcing costs via AI visual pipelines</li>
+        <li><b>↑ 3×</b> PPC iteration speed with AI-driven keyword strategy</li>
+        <li><b>24/7</b> AI-powered customer query handling implemented</li>
+        <li><b>100+</b> SKU creative pipeline via Canva AI Bulk Create</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="sec-label reveal"><span>02 — AI & Generative Intelligence</span></div>
+  <h2 class="reveal">The <em>AI stack</em> I work with daily</h2>
+  <div class="ai-grid">
+    <div class="ai-card tilt reveal">
+      <div class="ai-head"><h4>Claude AI (Anthropic)</h4><span class="lvl exp">Expert</span></div>
+      <p>Prompt engineering for product copy & A+ scripts · API-powered content pipelines · long-context sales report analysis · multilingual listings (EN/AR/DE)</p>
+    </div>
+    <div class="ai-card tilt reveal">
+      <div class="ai-head"><h4>ChatGPT · GPT-4o</h4><span class="lvl exp">Expert</span></div>
+      <p>Advanced CSV sales analysis · Custom GPTs for keyword & ASIN research · GPT-4o Vision for product image analysis · bulk description pipelines · B2B outreach automation</p>
+    </div>
+    <div class="ai-card tilt reveal">
+      <div class="ai-head"><h4>Google Gemini</h4><span class="lvl adv">Advanced</span></div>
+      <p>Multimodal image-to-listing copy · Gemini in Google Workspace · Deep Research for EU &amp; GCC market intelligence · Google Ads AI asset generation</p>
+    </div>
+    <div class="ai-card tilt reveal">
+      <div class="ai-head"><h4>Canva AI / Magic Studio</h4><span class="lvl exp">Expert</span></div>
+      <p>Bulk Create for 100+ SKU pipeline · Magic Write & Text-to-Image · Presentations AI for stakeholder reports · Background Remover</p>
+    </div>
+    <div class="ai-card tilt reveal">
+      <div class="ai-head"><h4>Midjourney / DALL·E</h4><span class="lvl adv">Advanced</span></div>
+      <p>Photorealistic lifestyle product scenes · brand-consistent prompting · inpainting to reformat one shot across multiple ad placements · ad creative without stock photo costs</p>
+    </div>
+    <div class="ai-card tilt reveal">
+      <div class="ai-head"><h4>Supporting AI Stack</h4><span class="lvl pro">Proficient</span></div>
+      <p>Magnific.ai (16× upscaling) · Runway ML (AI video) · Perplexity AI · Zapier AI (automation) · ElevenLabs · Notion AI · Grammarly AI</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec-label reveal"><span>03 — Professional Experience</span></div>
+  <h2 class="reveal">16+ years across <em>three continents</em></h2>
+  <div class="timeline">
+    <div class="t-item reveal">
+      <div class="t-top"><h3>E-Commerce & Purchasing Manager</h3><span class="when">Nov 2023 — Present</span></div>
+      <div class="where">ISKHAK Perfumes & Cosmetics Trading LLC · Dubai, UAE</div>
+      <ul>
+        <li>Delivered <b>45% YoY revenue growth</b> via optimised Amazon & Noon PPC campaigns (familiar with Amazon EU structure — DE, UK, FR, IT) powered by Helium 10 and AI-driven keyword strategy</li>
+        <li>Reduced CAC by <b>22%</b> through data-driven bid management and AI-assisted audience segmentation; improved CVR by <b>18%</b> with A+ content and SEO</li>
+        <li>Led procurement & vendor negotiations achieving <b>12% cost savings</b>; managed full SKU lifecycle, demand forecasting, and ERP-based inventory optimisation</li>
+        <li>Coordinated GCC-wide branding and paid digital campaigns; deployed Canva AI and Magnific.ai for rapid, high-quality creative production</li>
+      </ul>
+    </div>
+    <div class="t-item reveal">
+      <div class="t-top"><h3>IT & Business Relationship Manager</h3><span class="when">Nov 2022 — Nov 2023</span></div>
+      <div class="where">OPTO VISION LLC · Dubai, UAE</div>
+      <ul>
+        <li>Managed IT infrastructure, ERP systems, and network operations ensuring business continuity across multi-branch operations</li>
+        <li>Expanded international B2B sales via <b>Alibaba and Facebook Marketplace</b> using AI-generated content and targeted digital campaigns</li>
+        <li>Directed e-commerce website operations, introducing <b>AI chatbot support</b> to boost online conversions; oversaw supplier procurement and cost control</li>
+      </ul>
+    </div>
+    <div class="t-item reveal">
+      <div class="t-top"><h3>E-Commerce Manager</h3><span class="when">Mar 2018 — Mar 2022</span></div>
+      <div class="where">SM LUXURY LIFE LLC · Ajman, UAE</div>
+      <ul>
+        <li>Directed Amazon, Noon, and Alibaba marketplace operations achieving <b>consistent double-digit YoY growth</b> across international markets</li>
+        <li>Managed Google Ads, SEO, SEM, and social paid campaigns with measurable <b>ROAS improvement</b> across B2B and B2C channels</li>
+        <li>Optimised product listings, A+ content, and pricing strategies; executed cross-channel digital marketing with data-driven performance tracking</li>
+      </ul>
+    </div>
+    <div class="t-item reveal">
+      <div class="t-top"><h3>Senior E-Commerce Specialist</h3><span class="when">Nov 2017 — Mar 2018</span></div>
+      <div class="where">Big Brother Traders Pvt. Ltd. · Lahore, Pakistan</div>
+      <ul>
+        <li>Managed product catalogue optimisation and marketplace listings to improve search visibility and conversion rates</li>
+        <li>Built and maintained B2B sales partnerships; coordinated supplier relations for improved inventory and order fulfilment efficiency</li>
+        <li>Supported digital marketing initiatives contributing to pipeline growth across online sales channels</li>
+      </ul>
+    </div>
+    <div class="t-item reveal">
+      <div class="t-top"><h3>System Analyst & E-Commerce Specialist</h3><span class="when">Nov 2012 — Nov 2017</span></div>
+      <div class="where">ALBUR OPTICAL LLC · Dubai, UAE</div>
+      <ul>
+        <li>Managed end-to-end B2B procurement and vendor negotiations across <b>50+ suppliers</b>, achieving consistent cost optimisation and improved payment terms</li>
+        <li>Implemented and maintained ERP system workflows, reducing inventory discrepancies by an estimated <b>30%</b> and improving order fulfilment accuracy</li>
+        <li>Supported international marketplace integration contributing to new regional market expansion; oversaw IT infrastructure and network security across multi-branch operations</li>
+      </ul>
+    </div>
+    <div class="t-item reveal">
+      <div class="t-top"><h3>Sales Executive & IT Coordinator</h3><span class="when">Nov 2009 — Aug 2012</span></div>
+      <div class="where">GPB Office Solution · Athens, Greece 🇪🇺 — 3 years of hands-on business experience in Europe</div>
+      <ul>
+        <li>Repaired, refurbished, and installed printing and photocopier machines; handled full technical lifecycle including software configuration, networking, and on-site troubleshooting</li>
+        <li>Designed, developed, and managed the company website; ran <b>Google Ads campaigns</b> and digital marketing initiatives to drive B2B client acquisition across European markets</li>
+        <li>Managed end-to-end B2B client contracts, pre/post-sales technical support, and vendor coordination for printing and office solution services</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-label reveal"><span>04 — Skills</span></div>
+  <h2 class="reveal">Creative design & <em>marketplace mastery</em></h2>
+  <div class="skills-cols">
+    <div class="skill-box tilt reveal">
+      <h4>🛒 Marketplace & Growth</h4>
+      <div class="skill"><div class="row"><span>Amazon Seller & Vendor Central</span><span>95%</span></div><div class="bar"><i data-w="95"></i></div></div>
+      <div class="skill"><div class="row"><span>PPC & Bid Optimization</span><span>92%</span></div><div class="bar"><i data-w="92"></i></div></div>
+      <div class="skill"><div class="row"><span>SEO / SEM Strategy</span><span>90%</span></div><div class="bar"><i data-w="90"></i></div></div>
+      <div class="skill"><div class="row"><span>Demand Forecasting & ERP</span><span>88%</span></div><div class="bar"><i data-w="88"></i></div></div>
+    </div>
+    <div class="skill-box tilt reveal">
+      <h4>🎨 Creative & Visual Production</h4>
+      <div class="skill"><div class="row"><span>Adobe Creative Suite (Ps · Ai · Pr · Ae)</span><span>90%</span></div><div class="bar"><i data-w="90"></i></div></div>
+      <div class="skill"><div class="row"><span>AI Visual Tools (Canva · MJ · DALL·E)</span><span>93%</span></div><div class="bar"><i data-w="93"></i></div></div>
+      <div class="skill"><div class="row"><span>Amazon A+ Content & EBC Banners</span><span>92%</span></div><div class="bar"><i data-w="92"></i></div></div>
+      <div class="skill"><div class="row"><span>CorelDRAW · Video Ads · Figma</span><span>82%</span></div><div class="bar"><i data-w="82"></i></div></div>
+    </div>
+    <div class="skill-box tilt reveal">
+      <h4>🤖 AI & Automation</h4>
+      <div class="skill"><div class="row"><span>Prompt Engineering (Claude · GPT-4o)</span><span>95%</span></div><div class="bar"><i data-w="95"></i></div></div>
+      <div class="skill"><div class="row"><span>AI Content Pipelines & Bulk Create</span><span>92%</span></div><div class="bar"><i data-w="92"></i></div></div>
+      <div class="skill"><div class="row"><span>Workflow Automation (Zapier AI)</span><span>85%</span></div><div class="bar"><i data-w="85"></i></div></div>
+      <div class="skill"><div class="row"><span>AI Lifestyle Scene Generation</span><span>88%</span></div><div class="bar"><i data-w="88"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="sec-label reveal"><span>05 — Education & Certifications</span></div>
+  <h2 class="reveal">Credentials that <em>back it up</em></h2>
+  <div class="cert-grid">
+    <div class="cert reveal"><span class="ico">🎓</span><div><b>Secondary School Certificate (SSC), Science — 1993</b><span>BISE Peshawar, Pakistan</span></div></div>
+    <div class="cert reveal"><span class="ico">🛠</span><div><b>A+ Hardware Certification</b><span>CompTIA / Technical Training</span></div></div>
+    <div class="cert reveal"><span class="ico">📜</span><div><b>Google Digital Marketing & E-Commerce Certificate</b><span>Google — Coursera</span></div></div>
+    <div class="cert reveal"><span class="ico">📊</span><div><b>Google Analytics 4 (GA4)</b><span>Google Skillshop</span></div></div>
+    <div class="cert reveal"><span class="ico">🚀</span><div><b>Helium 10 Certified — Amazon Advertising Accredited</b><span>Helium10 / Amazon</span></div></div>
+    <div class="cert reveal"><span class="ico">🔍</span><div><b>Jungle Scout Certified E-Commerce Expert</b><span>Jungle Scout</span></div></div>
+    <div class="cert reveal"><span class="ico">🎨</span><div><b>Graphics Design & Multimedia Production</b><span>Professional Training</span></div></div>
+    <div class="cert reveal"><span class="ico">✨</span><div><b>Canva AI Magic Studio — Advanced Power User</b><span>Canva</span></div></div>
+    <div class="cert reveal"><span class="ico">🤖</span><div><b>Prompt Engineering for Generative AI</b><span>Professional Development (in progress)</span></div></div>
+    <div class="cert reveal"><span class="ico">🖼</span><div><b>Midjourney Advanced Prompting & Magnific.ai Specialist</b><span>Self-directed / Community-certified</span></div></div>
+  </div>
+
+  <h2 class="reveal" style="margin-top:4.5rem">Languages</h2>
+  <div class="langs">
+    <div class="lang reveal"><b>English</b><span>C1/C2</span><p>Fluent</p></div>
+    <div class="lang reveal"><b>Arabic</b><span>B1</span><p>Conversational</p></div>
+    <div class="lang reveal"><b>Urdu</b><span>C2</span><p>Native</p></div>
+    <div class="lang reveal"><b>Pashto</b><span>C2</span><p>Native</p></div>
+    <div class="lang reveal"><b>German</b><span>A1</span><p>Learning · B1 target</p></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="sec-label reveal"><span>06 — Contact</span></div>
+  <h2 class="reveal">Let's grow your <em>marketplace</em> together</h2>
+  <p class="reveal">Based in Dubai and relocating to Europe. I would require employer sponsorship and I am well prepared for that process — happy to walk any employer through it. References available on request.</p>
+  <div class="contact-links reveal">
+    <a class="c-link" href="mailto:rehmatzaman@gmail.com"><i>✉</i> rehmatzaman@gmail.com</a>
+    <a class="c-link" href="tel:+971556921707"><i>📞</i> +971 55 692 1707</a>
+    <a class="c-link" href="https://linkedin.com/in/rehmatktk" target="_blank" rel="noopener"><i>in</i> linkedin.com/in/rehmatktk</a>
+    <a class="c-link" href="https://behance.net/rehmatkhan" target="_blank" rel="noopener"><i>Be</i> behance.net/rehmatkhan</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p class="gdpr">I consent to the processing of my personal data contained in this CV for the purposes of recruitment and employment, in accordance with Regulation (EU) 2016/679 (GDPR).</p>
+  <p>© 2026 Rehmat Zaman Khattak — E-Commerce · AI · Growth</p>
+</footer>
+
+<script>
+/* Constellation network background */
+const cv=document.getElementById('net'),cx=cv.getContext('2d');
+let W,H,pts=[];
+function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;
+  pts=Array.from({length:Math.min(90,W/16)},()=>({
+    x:Math.random()*W,y:Math.random()*H,
+    vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35}));}
+addEventListener('resize',resize);resize();
+let mx=-999,my=-999;
+addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+(function draw(){
+  cx.clearRect(0,0,W,H);
+  for(const p of pts){
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1;
+    if(p.y<0||p.y>H)p.vy*=-1;
+    cx.beginPath();cx.arc(p.x,p.y,1.4,0,7);
+    cx.fillStyle='rgba(34,211,238,.55)';cx.fill();
+  }
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+    const a=pts[i],b=pts[j],d=(a.x-b.x)**2+(a.y-b.y)**2;
+    if(d<130*130){
+      cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);
+      cx.strokeStyle=`rgba(99,132,246,${.35*(1-d/(130*130))})`;cx.lineWidth=.6;cx.stroke();
+    }
+  }
+  for(const p of pts){
+    const d=(p.x-mx)**2+(p.y-my)**2;
+    if(d<160*160){
+      cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(mx,my);
+      cx.strokeStyle=`rgba(139,92,246,${.4*(1-d/(160*160))})`;cx.lineWidth=.7;cx.stroke();
+    }
+  }
+  requestAnimationFrame(draw);
+})();
+
+/* Hero 3D parallax */
+const hero=document.getElementById('heroTilt');
+addEventListener('mousemove',e=>{
+  const rx=(e.clientY/innerHeight-.5)*-7,ry=(e.clientX/innerWidth-.5)*10;
+  hero.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;
+});
+
+/* Tilt cards */
+document.querySelectorAll('.tilt').forEach(el=>{
+  el.addEventListener('mousemove',e=>{
+    const r=el.getBoundingClientRect();
+    const rx=((e.clientY-r.top)/r.height-.5)*-10;
+    const ry=((e.clientX-r.left)/r.width-.5)*10;
+    el.style.transform=`perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(4px)`;
+  });
+  el.addEventListener('mouseleave',()=>el.style.transform='');
+});
+
+/* Scroll reveal + bars */
+const io=new IntersectionObserver(es=>es.forEach(en=>{
+  if(!en.isIntersecting)return;
+  en.target.classList.add('visible');
+  en.target.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w+'%');
+  io.unobserve(en.target);
+}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Counters */
+const io2=new IntersectionObserver(es=>es.forEach(en=>{
+  if(!en.isIntersecting)return;
+  const el=en.target,target=+el.dataset.count,suf=el.dataset.suf||'';let cur=0;
+  const step=()=>{cur+=Math.max(1,Math.ceil(target/45));
+    if(cur>=target){el.textContent=target+suf;}
+    else{el.textContent=cur+suf;requestAnimationFrame(step);}};
+  step();io2.unobserve(el);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>io2.observe(el));
+</script>
+</body>
+</html>
