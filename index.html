@@ -208,18 +208,28 @@ footer{color:var(--mute);font-size:13px;text-align:center;padding:60px 0 40px}
   .svc{grid-template-columns:52px 1fr;gap:6px 12px;padding:26px 0;align-items:center}
   .svc .num{font-size:28px}
   .svc>div:last-child{grid-column:1/-1}
-  #work{height:320vh}
+  #work{height:380vh}
   .ring-head{top:84px;flex-direction:column;align-items:flex-start;gap:12px}
-  .scene{height:46vh;margin-top:120px;perspective:1100px}
+  .scene{height:52vh;margin-top:70px;perspective:900px}
+  .card3d{width:74vw;left:-37vw;top:-29vw;border-radius:14px}
+  .ring-count{bottom:4vh}
   #systems{padding:80px 0 30px}
-  .sys{position:relative;top:auto;display:block;height:auto;min-height:0;margin-bottom:22px;border-radius:20px}
-  .sys .txt{padding:26px 22px;display:block}
-  .sys .k{font-size:44px}
-  .sys .note{display:block;margin-top:14px}
-  .sys .shot{height:auto;padding:0 0 0 22px}
-  .sys .shot img{position:static;width:100%;display:block;border-radius:10px 0 0 0}
-  .sys .shot img.ph{width:58%;height:auto;margin:0 auto 0;border-radius:14px 14px 0 0}
-  .guard{padding:26px 22px 30px}
+  .stack{margin-top:36px}
+  .sys{position:sticky;top:72px;display:flex;flex-direction:column;height:calc(100svh - 96px);min-height:0;max-height:760px;margin-bottom:26px;border-radius:22px}
+  .sys .txt{padding:20px 20px 14px;display:block;flex:0 0 auto}
+  .sys .txt>div{display:block}
+  .sys .k{font-size:30px;display:inline-block;margin-right:10px;vertical-align:middle;-webkit-text-stroke:1px var(--lime)}
+  .sys h3{display:inline;font-size:21px;vertical-align:middle}
+  .sys p{font-size:14.5px;margin-top:10px;line-height:1.45}
+  .sys ul{display:grid;margin-top:10px;gap:5px}
+  .sys ul li{font-size:13px}
+  .sys .tags,.sys .note{display:none}
+  .sys .shot{flex:1 1 auto;min-height:150px;height:auto;padding:0;position:relative;overflow:hidden}
+  .sys .shot img{position:absolute;inset:14px auto auto 20px;width:150%;max-width:none;border-radius:10px}
+  .sys .shot img.ph{position:absolute;inset:12px auto auto 50%;width:auto;height:130%;border-radius:14px}
+  .guard{padding:16px 22px;gap:16px}
+  .grid50{width:min(300px,78%);gap:8px}
+  .guard b{font-size:17px}
   .cases,.sk,.cred{grid-template-columns:1fr}
   .tl{padding-left:30px}
   .tl:before,.tl .fill{left:4px}
@@ -602,7 +612,7 @@ document.querySelectorAll('.tilt').forEach(el=>{
 /* ===== 3D ring gallery driven by scroll ===== */
 (function ring(){
   const ring=document.getElementById('ring'); const N=PROJECTS.length;
-  const w=Math.min(330,innerWidth*.62); document.querySelectorAll('.card3d');const R=Math.round((w/2)/Math.tan(Math.PI/N))+40;
+  const w=isMob?innerWidth*.74:Math.min(330,innerWidth*.62); const R=Math.round((w/2)/Math.tan(Math.PI/N))+40;
   PROJECTS.forEach((p,i)=>{
     const a=document.createElement('a'); a.className='card3d'; a.href='https://www.behance.net/gallery/'+p[2]; a.target='_blank'; a.rel='noopener';
     a.innerHTML=`<img src="img/b${i+1}.jpg" alt="${p[0]}" loading="lazy"><div class="cap"><small>${p[1]}</small>${p[0]}</div>`;
@@ -613,19 +623,18 @@ document.querySelectorAll('.tilt').forEach(el=>{
   const st={r:0};
   gsap.to(st,{r:-360+360/N,ease:'none',scrollTrigger:{trigger:'#work',start:'top top',end:'bottom bottom',scrub:1,
     onUpdate:self=>{const i=Math.min(N,Math.round(self.progress*(N-1))+1);rc.textContent=String(i).padStart(2,'0')}},
-    onUpdate:()=>{ring.style.transform=`translateZ(${-R}px) rotateX(-6deg) rotateY(${st.r}deg)`}});
+    onUpdate:()=>{ring.style.transform=`translateZ(${-R}px) rotateX(${isMob?-3:-6}deg) rotateY(${st.r}deg)`}});
   ring.style.transform=`translateZ(${-R}px) rotateX(-6deg)`;
 })();
 
 /* ===== stacked system cards ===== */
 const sys=gsap.utils.toArray('.sys');
 sys.forEach((card,i)=>{
-  if(isMob){gsap.from(card,{opacity:0,y:50,duration:.9,ease:'expo.out',scrollTrigger:{trigger:card,start:'top 88%'}});return;}
   if(i===sys.length-1)return;
-  gsap.to(card,{scale:.9,filter:'brightness(.4)',ease:'none',scrollTrigger:{trigger:sys[i+1],start:'top bottom',end:'top 90px',scrub:true}});
-  gsap.fromTo(card.querySelector('.shot img'),{y:40},{y:-40,ease:'none',scrollTrigger:{trigger:card,start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.to(card,{scale:.9,filter:'brightness(.4)',ease:'none',scrollTrigger:{trigger:sys[i+1],start:'top bottom',end:isMob?'top 72px':'top 90px',scrub:true}});
+  if(!isMob)gsap.fromTo(card.querySelector('.shot img'),{y:40},{y:-40,ease:'none',scrollTrigger:{trigger:card,start:'top bottom',end:'bottom top',scrub:true}});
 });
-if(!isMob)gsap.set('.sys .shot img.ph',{xPercent:-50});
+gsap.set('.sys .shot img.ph',{xPercent:-50});
 
 /* guard: 50 checks tick green */
 (function(){const g=document.getElementById('g50');for(let i=0;i<50;i++)g.appendChild(document.createElement('span'));
